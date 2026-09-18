@@ -1,0 +1,1426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    overflow-x: hidden;
+    background: #070a0e;
+    color: #ffffff;
+}
+
+
+/* ================= FIXED BACKGROUND ================= */
+
+.fixed-bg {
+    position: fixed;
+    top: 0;
+    left: -1%;
+
+    width: 102%;
+    height: 100vh;
+
+    background: url('/Main/static/assets/Machine\ background-1.png')
+        center center / cover no-repeat;
+
+    transform: scaleX(-1);
+
+    z-index: 0;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    padding: 0 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+
+    background: rgba(4, 7, 10, 0.45);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* ================= LOGO ================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    min-width: 120px;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    margin-right: 8px;
+
+    border-radius: 6px;
+
+    background: #00d9ff;
+
+    color: #05070a;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+/* ================= NAV LINKS ================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+
+    padding: 10px 0;
+
+    cursor: pointer;
+}
+
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.65);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Underline */
+
+.nav-links li::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 1px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00d9ff;
+
+    transition: width 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-links li:hover a {
+    color: #ffffff;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+
+/* Active */
+
+.nav-links li.active a {
+    color: #00d9ff;
+}
+
+.nav-links li.active::after {
+    width: 100%;
+}
+
+
+/* ================= LOGIN ================= */
+
+.login-btn {
+    min-width: 88px;
+
+    padding: 9px 20px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #00d9ff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #00d9ff;
+
+    color: #05070a;
+
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.25);
+}
+
+
+/* ================= MAIN ================= */
+
+#main {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 120px 80px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 100vh;
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    z-index: 2;
+}
+
+
+/* ================= DARK OVERLAY ================= */
+
+.hero-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.58) 48%,
+            rgba(0, 0, 0, 0.70) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 720px;
+
+    margin-left: 3%;
+}
+
+.hero-content h4 {
+    margin-bottom: 18px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-content h1 {
+    margin-bottom: 24px;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 1.03;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+    color: #00d9ff;
+}
+
+.hero-content p {
+    max-width: 610px;
+
+    margin-bottom: 32px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* ================= EXPLORE BUTTON ================= */
+
+.explore-btn {
+    padding: 13px 27px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 30px;
+
+    background: #00d9ff;
+
+    color: #05070a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+
+    background: transparent;
+
+    color: #00d9ff;
+
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.2);
+}
+
+
+/* ================= SCROLL INDICATOR ================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.scroll-indicator span {
+    display: block;
+
+    width: 22px;
+    height: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.scroll-indicator span::before {
+    content: "";
+
+    position: absolute;
+
+    top: 7px;
+    left: 50%;
+
+    width: 3px;
+    height: 7px;
+
+    border-radius: 5px;
+
+    background: #00d9ff;
+
+    transform: translateX(-50%);
+
+    animation: scrollMove 1.6s infinite;
+}
+
+@keyframes scrollMove {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 12px);
+    }
+}
+
+
+/* ================= NORMAL SECTIONS ================= */
+
+.test-device,
+.dashboard,
+.fingerprint,
+.diagnostics,
+.history {
+    position: relative;
+
+    z-index: 2;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 217, 255, 0.05),
+            transparent 40%
+        ),
+        transparent;
+}
+
+
+/* ================= SECTION CONTENT ================= */
+
+.section-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    z-index: 5;
+}
+
+.section-content h2 {
+    margin-bottom: 10px;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    margin-bottom: 45px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 15px;
+}
+
+
+/* ================= DASHBOARD CARDS ================= */
+
+.card-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+
+    min-height: 150px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.065);
+
+    border-color: rgba(0, 217, 255, 0.35);
+}
+
+.card span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.card h3 {
+    font-size: 27px;
+
+    font-weight: 500;
+}
+
+.status {
+    color: #00e58b;
+}
+
+
+/* ================= PLACEHOLDER ================= */
+
+.placeholder-card {
+    width: 100%;
+
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+}
+
+.placeholder-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+.placeholder-card p {
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 14px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page {
+        padding: 120px 40px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        min-width: auto;
+    }
+
+    .hero-content {
+        margin-left: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .page {
+        padding: 110px 25px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-content h2 {
+        font-size: 34px;
+    }
+}
+
+
+
+
+
+/* ================= TEST DEVICE ================= */
+/* ================= TEST DEVICE ================= */
+/* ================= TEST DEVICE ================= */
+
+
+/* ================= TEST DEVICE ================= */
+
+.test-device {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 0px;
+    padding-bottom: 90px;
+}
+
+
+/* ================= TEST DEVICE HEADER ================= */
+
+.test-device .section-content {
+    padding-top: 20px;
+}
+
+.test-device .section-subtitle {
+    max-width: 650px;
+}
+
+
+/* ================= DEVICE SELECTION ================= */
+
+.device-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+
+/* ================= DEVICE CARD ================= */
+
+.device-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.device-card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(255, 255, 255, 0.065);
+
+    border-color: rgba(0, 217, 255, 0.35);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Selected */
+
+.device-card.selected {
+    border-color: #00d9ff;
+
+    background: rgba(0, 217, 255, 0.07);
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.08);
+}
+
+
+/* ================= DEVICE ICON ================= */
+
+.device-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(0, 217, 255, 0.1);
+
+    border: 1px solid rgba(0, 217, 255, 0.2);
+
+    color: #00d9ff;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= DEVICE INFO ================= */
+
+.device-info h3 {
+    margin-bottom: 7px;
+
+    font-size: 22px;
+
+    font-weight: 500;
+}
+
+.device-info span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #00d9ff;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.device-info p {
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 13px;
+}
+
+
+/* ================= DEVICE STATUS ================= */
+
+.device-status {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 229, 139, 0.08);
+
+    border: 1px solid rgba(0, 229, 139, 0.2);
+
+    color: #00e58b;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= SELECTED DEVICE ================= */
+
+.selected-device {
+    margin-top: 25px;
+
+    padding: 22px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+}
+
+.small-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.selected-device h3 {
+    font-size: 19px;
+
+    font-weight: 500;
+}
+
+.device-ready {
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    color: #00e58b;
+
+    background: rgba(0, 229, 139, 0.07);
+
+    border: 1px solid rgba(0, 229, 139, 0.2);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= DEVICE SECTION HEADING ================= */
+
+.test-section {
+    margin-bottom: 35px;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.section-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 8px;
+
+    background: rgba(0, 217, 255, 0.08);
+
+    border: 1px solid rgba(0, 217, 255, 0.18);
+
+    color: #00d9ff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+/* ================= TEST DEVICE ACTION ================= */
+
+.analysis-action {
+    margin-top: 30px;
+
+    min-height: 90px;
+
+    padding: 20px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 217, 255, 0.06),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(0, 217, 255, 0.18);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ================= ACTION INFO ================= */
+
+.action-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* Green status indicator */
+
+.action-status {
+    flex-shrink: 0;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #00e58b;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 229, 139, 0.08),
+        0 0 14px rgba(0, 229, 139, 0.55);
+
+    animation: readyPulse 2s infinite;
+}
+
+@keyframes readyPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 4px rgba(0, 229, 139, 0.08),
+            0 0 14px rgba(0, 229, 139, 0.45);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 7px rgba(0, 229, 139, 0.03),
+            0 0 20px rgba(0, 229, 139, 0.65);
+    }
+}
+
+
+.action-info h3 {
+    margin-bottom: 4px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+.action-info p {
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 12px;
+}
+
+
+/* ================= CONTINUE BUTTON ================= */
+
+.analyze-btn {
+    min-width: 125px;
+
+    padding: 12px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 25px;
+
+    background: #00d9ff;
+
+    color: #05070a;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 rgba(0, 217, 255, 0);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.analyze-btn span {
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+
+.analyze-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: transparent;
+
+    color: #00d9ff;
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.18);
+}
+
+
+.analyze-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+.analyze-btn:active {
+    transform: translateY(0);
+}
+
+
+.simulate-btn {
+    margin-top: 15px;
+    min-width: 125px;
+
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 2px solid #00d9ff;
+
+    border-radius: 25px;
+
+    background: #05070a;
+
+    color: #00d9ff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 rgba(0, 216, 254, 0);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.simulate-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: #00d9ff;
+
+    color: #05070a;
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.18);
+}
+
+.button-window{
+    position:relative;
+    width:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* ================= FINGERPRINT DEVICE ================= */
+/* ================= FINGERPRINT DEVICE ================= */
+/* ================= FINGERPRINT DEVICE ================= */
+
+.fingerprint {
+    margin-bottom: 30px;
+    padding-top: 60px;
+}
+.fingerprint-device {
+    margin-bottom: 35px;
+
+    padding: 22px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+}
+
+.fingerprint-device span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.fingerprint-device h3 {
+    font-size: 19px;
+
+    font-weight: 500;
+}
+
+.fingerprint-status {
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    color: #00d9ff;
+
+    background: rgba(0, 217, 255, 0.07);
+
+    border: 1px solid rgba(0, 217, 255, 0.2);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= FINGERPRINT SECTION ================= */
+
+.fingerprint-section {
+    margin-bottom: 30px;
+}
+
+
+/* ================= FINGERPRINT FORM ================= */
+
+#fingerprint-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.fingerprint-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(10px);
+}
+
+.fingerprint-field-name {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.fingerprint-input label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+}
+
+.input-box {
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    transition: border-color 0.3s ease;
+}
+
+.input-box:focus-within {
+    border-color: rgba(0, 217, 255, 0.5);
+}
+
+.input-box input {
+    width: 100%;
+
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.input-box span {
+    padding-right: 12px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 10px;
+}
+
+
+/* ================= FINGERPRINT ACTION ================= */
+
+.fingerprint-action {
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(0, 217, 255, 0.035);
+
+    border: 1px solid rgba(0, 217, 255, 0.12);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+}
+
+.fingerprint-action h3 {
+    margin-bottom: 4px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.fingerprint-action p {
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 11px;
+}
+
+#enter-fingerprint {
+    padding: 11px 22px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 25px;
+
+    background: #00d9ff;
+
+    color: #05070a;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#enter-fingerprint span {
+    margin-left: 8px;
+
+    font-size: 15px;
+}
+
+#enter-fingerprint:hover {
+    transform: translateY(-2px);
+
+    background: transparent;
+
+    color: #00d9ff;
+
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.18);
+}

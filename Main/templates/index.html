@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Machine Response Fingerprinting</title>
+
+    <link rel="stylesheet" href="/Main/static/style.css">
+</head>
+
+<body>
+
+    <!-- ================= FIXED BACKGROUND IMAGE ================= -->
+
+    <div class="fixed-bg"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="logo-box">M</span>
+            MRF
+        </div>
+
+        <ul class="nav-links">
+
+            <li class="active">
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#test-device">Test-Device</a>
+            </li>
+
+           
+
+            <li>
+                <a href="#fingerprint">Fingerprint</a>
+            </li>
+
+             <li>
+                <a href="#dashboard">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="#diagnostics">Diagnostics</a>
+            </li>
+
+            <li>
+                <a href="#history">History</a>
+            </li>
+
+        </ul>
+
+        <button class="login-btn">
+            Login
+        </button>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main id="main">
+
+
+        <!-- ================= HOME ================= -->
+
+        <section id="home" class="page hero">
+
+            <!-- Dark overlay over image -->
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <h4>MACHINE CONDITION ASSESSMENT</h4>
+
+                <h1>
+                    MACHINE RESPONSE
+                    <br>
+                    <span>FINGERPRINTING</span>
+                </h1>
+
+                <p>
+                    Analyze how machines respond to controlled stimuli
+                    and identify changes in their operating behavior.
+                </p>
+
+                <button class="explore-btn">
+                    Explore System
+                </button>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span></span>
+                Scroll to explore
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TEST DEVICE ================= -->
+
+        <section id="test-device" class="page test-device">
+            
+            <div class="hero-overlay"></div>
+            <div class="section-content">
+
+                <h2>Test Device</h2>
+
+                <p class="section-subtitle">
+                    Select the machine you want to assess
+                </p>
+
+
+                <!-- ================= DEVICE SELECTION ================= -->
+
+                <div class="test-section">
+
+                    <div class="section-heading">
+
+                        <span class="section-number">01</span>
+
+                        <div>
+                            <h3>Select Device</h3>
+
+                            <p>
+                                Choose a registered machine for response fingerprinting
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="device-container">
+
+
+                        <!-- ================= DEVICE 1 ================= -->
+
+                        <div class="device-card selected">
+
+                            <div class="device-icon">
+                                M
+                            </div>
+
+                            <div class="device-info">
+
+                                <h3>DC Motor</h3>
+
+                                <span>Device ID: M-001</span>
+
+                                <p>
+                                    Industrial DC motor
+                                </p>
+
+                            </div>
+
+                            <div class="device-status">
+                                READY
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= DEVICE 2 ================= -->
+
+                        <div class="device-card">
+
+                            <div class="device-icon">
+                                M
+                            </div>
+
+                            <div class="device-info">
+
+                                <h3>Induction Motor</h3>
+
+                                <span>Device ID: M-002</span>
+
+                                <p>
+                                    Three-phase induction motor
+                                </p>
+
+                            </div>
+
+                            <div class="device-status">
+                                READY
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= DEVICE 3 ================= -->
+
+                        <div class="device-card">
+
+                            <div class="device-icon">
+                                P
+                            </div>
+
+                            <div class="device-info">
+
+                                <h3>Industrial Pump</h3>
+
+                                <span>Device ID: P-001</span>
+
+                                <p>
+                                    Industrial pump system
+                                </p>
+
+                            </div>
+
+                            <div class="device-status">
+                                READY
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SELECTED DEVICE ================= -->
+
+                <div class="selected-device">
+
+                    <div>
+
+                        <span class="small-label">
+                            SELECTED DEVICE
+                        </span>
+
+                        <h3>
+                            DC Motor — M-001
+                        </h3>
+
+                    </div>
+
+                    <div class="device-ready">
+                        SYSTEM READY
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CONTINUE ================= -->
+
+                <div class="analysis-action">
+
+                    <div class="action-info">
+
+                        <span class="action-status"></span>
+
+                        <div>
+
+                            <h3>
+                                Device Ready for Testing
+                            </h3>
+
+                            <p>
+                                Continue to the Fingerprint page to enter machine response data.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="button-window">
+
+                        <button class="simulate-btn" id="continue-fingerprint">
+
+                            Run Simulator
+
+                        </button>
+                        <button class="analyze-btn" id="continue-fingerprint">
+
+                            Continue
+
+                            <span>→</span>
+
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FINGERPRINT ================= -->
+
+        <section id="fingerprint" class="page fingerprint">
+
+            <div class="section-content">
+
+                <h2>Response Fingerprint</h2>
+
+                <p class="section-subtitle">
+                    Enter the machine response data before and after the controlled stimulus
+                </p>
+
+
+                <!-- SELECTED DEVICE -->
+
+                <div class="fingerprint-device">
+
+                    <div>
+
+                        <span>TEST DEVICE</span>
+
+                        <h3 id="fingerprint-device-name">
+                            DC Motor — M-001
+                        </h3>
+
+                    </div>
+
+                    <div class="fingerprint-status">
+                        DATA ENTRY
+                    </div>
+
+                </div>
+
+
+                <!-- DATA ENTRY -->
+
+                <div class="fingerprint-section">
+
+                    <div class="section-heading">
+
+                        <span class="section-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>Machine Response Data</h3>
+
+                            <p>
+                                Manually enter the measured values for the selected device
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="fingerprint-form">
+
+                        <!-- JavaScript will generate the fields here -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- ENTER BUTTON -->
+
+                <div class="fingerprint-action">
+
+                    <div>
+
+                        <h3>Data Ready?</h3>
+
+                        <p>
+                            Verify all values before submitting the response data.
+                        </p>
+
+                    </div>
+
+                    <button id="enter-fingerprint">
+
+                        Enter
+
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+           <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page dashboard">
+            
+            <div class="section-content">
+
+                <h2>Machine Dashboard</h2>
+
+                <p class="section-subtitle">
+                    Machine condition overview
+                </p>
+
+                <div class="card-container">
+
+                    <div class="card">
+                        <span>Machine</span>
+                        <h3>M-001</h3>
+                    </div>
+
+                    <div class="card">
+                        <span>Status</span>
+                        <h3 class="status">HEALTHY</h3>
+                    </div>
+
+                    <div class="card">
+                        <span>RPM</span>
+                        <h3>1024</h3>
+                    </div>
+
+                    <div class="card">
+                        <span>Temperature</span>
+                        <h3>46.7 °C</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= DIAGNOSTICS ================= -->
+
+        <section id="diagnostics" class="page diagnostics">
+
+            <div class="section-content">
+
+                <h2>Diagnostics</h2>
+
+                <p class="section-subtitle">
+                    Response characteristics and extracted features
+                </p>
+
+                <div class="placeholder-card">
+
+                    <h3>Diagnostic Analysis</h3>
+
+                    <p>
+                        Response features and condition analysis
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HISTORY ================= -->
+
+        <section id="history" class="page history">
+
+            <div class="section-content">
+
+                <h2>Machine History</h2>
+
+                <p class="section-subtitle">
+                    Historical machine response and condition trends
+                </p>
+
+                <div class="placeholder-card">
+
+                    <h3>Historical Data</h3>
+
+                    <p>
+                        Historical trends and previous assessments
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/Main/static/script.js"></script>
+
+</body>
+
+</html>
