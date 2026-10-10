@@ -10,7 +10,7 @@ const selectedDeviceName = document.querySelector(".selected-device h3");
 const continueButton = document.querySelector("#continue-fingerprint");
 
 
-/* ================= FINGERPRINT DATA ================= */
+
 
 const fingerprintDeviceName =
     document.querySelector("#fingerprint-device-name");
